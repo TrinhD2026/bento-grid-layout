@@ -1,0 +1,32 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --purple-100: hsl(254, 88%, 90%);
+    --purple-500: hsl(256, 67%, 59%);
+    --yellow-100: hsl(31, 66%, 93%);
+    --yellow-500: hsl(39, 100%, 71%);
+    --black: hsl(0, 0%, 7%)
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*font-family: "Montserrat", sans-serif;*/
+    /*   font-size: clamp(0.8rem, 0.6rem + 0.8vw, 1rem);
+    font-weight: 500;*/
+    background-color: var(--white);
+}
+
+main {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    grid-row-gap: 2rem;
+}
+
