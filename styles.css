@@ -1,4 +1,5 @@
 :root {
+    /*color variables*/
     --white: hsl(0, 0%, 100%);
     --gray: hsl(0, 0%, 95%);
     --purple-100: hsl(254, 88%, 90%);
@@ -6,14 +7,21 @@
     --yellow-100: hsl(31, 66%, 93%);
     --yellow-500: hsl(39, 100%, 71%);
     --black: hsl(0, 0%, 7%);
+
+    /*normal font size variables*/
     --text-size: clamp(1.1rem, 1rem + 0.8vw, 1.4rem);
-    --medium-margin: clamp(1.2rem, 1rem + 0.8vw, 1.4rem);
-    --small-padding: clamp(1rem, 0.8rem + 0.8vw, 1.3rem);
-    --medium-padding: clamp(1.7rem, 1.5rem + 0.9vw, 2.1rem);
-    --big-padding: clamp(2.1rem, 2rem + 0.9vw, 2.5rem);
+
+    /*header font size variables*/
     --small-header-size: clamp(1.5rem, 1.4rem + 0.9vw, 1.9rem);
     --medium-header-size: clamp(1.8rem, 1.7rem + 0.9vw, 2.2rem);
     --big-header-size: clamp(2.4rem, 2.3rem + 0.9vw, 2.8rem);
+
+    /*padding variables*/
+    --small-padding: clamp(1rem, 0.8rem + 0.8vw, 1.3rem);
+    --medium-padding: clamp(1.7rem, 1.5rem + 0.9vw, 2.1rem);
+    --big-padding: clamp(2.1rem, 2rem + 0.9vw, 2.5rem);
+
+    /*img width variables*/
     --small-img-width: clamp(6rem, 4rem + 20vw, 12rem);
     --medium-img-width: clamp(10rem, 8rem + 20vw, 15rem);
     --big-img-width: clamp(17rem, 15rem + 30vw, 40rem);
@@ -30,15 +38,12 @@
 @font-face {
     font-family: 'DM Sans';
     src: url('./assets/fonts/DMSans-VariableFont_opsz,wght.ttf');
-    /*src: url('DMSans-VariableFont_opsz,wght.ttf') format('woff2-variations');
-    src: url('RobotoFlex-VF.woff2') format('woff2') tech('variations');*/
     font-weight: 400 500;
     font-stretch: 25% 151%;
 }
 
 body {
     font-family: "DM Sans", sans-serif;
-    font-size: var(--text-size);
     background-color: var(--gray);
     text-align: center;
     color: var(--white);
@@ -49,7 +54,7 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     padding: 1rem;
-    grid-row-gap: 2rem;
+    gap: 2rem;
     font-size: var(--text-size);
     margin: 0 auto;
     width: clamp(16rem, 14rem + 30vw, 25rem);
@@ -65,19 +70,22 @@ img {
 h2 {
     font-size: var(--small-header-size);
     line-height: 90%;
-    margin-bottom: var(--medium-margin);
 }
 
 .illustratrion {
     width: 100%;
-    padding: 1rem;
-    margin: 0 auto;
+    padding: var(--small-padding);
     text-align: center;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .five-stars-container {
-    padding: clamp(2.3rem, 2rem + 0.8vw, 2.8rem);
+    padding: var(--big-padding);
     background-color: var(--purple-500);
 }
 
@@ -85,7 +93,7 @@ h2 {
     font-size: var(--big-header-size);
     font-weight: 500;
     line-height: 90%;
-    margin-bottom: var(--medium-margin);
+    letter-spacing: 0.2rem;
 }
 
 .five-stars-container h1 span:first-child {
@@ -101,6 +109,7 @@ h2 {
 }
 
 .consistent-schedule-container {
+    align-items: flex-start;
     background-color: var(--yellow-500);
     color: var(--black);
     text-align: left;
@@ -110,7 +119,6 @@ h2 {
 
 .consistent-schedule-container img {
     width: var(--medium-img-width);
-    margin-bottom: -0.4rem;
 }
 
 .schedule-posts-container {
@@ -120,10 +128,7 @@ h2 {
 }
 
 .grow-followers-container {
-    display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
     color: var(--black);
     background-color: var(--yellow-500);
     padding: var(--big-padding);
@@ -132,8 +137,6 @@ h2 {
 .grow-followers-container h2 {
     width: 90%;
     font-size: var(--medium-header-size);
-    margin-bottom: 0;
-    margin-top: var(--medium-margin);
 }
 
 .grow-followers-container img {
@@ -142,19 +145,12 @@ h2 {
 
 .multiple-platforms-container {
     background-color: var(--purple-500);
-    display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
     text-align:left;
 }
 
-.multiple-platforms-container h2 {
-    margin-bottom: 0;
-    margin-top: var(--medium-margin);
-}
-
 .audience-growth-container {
+    align-items: flex-start;
     background-color: var(--white);
     color: var(--black);
     text-align: left;
@@ -163,15 +159,12 @@ h2 {
 
 .audience-growth-container > h2 {
    font-size: clamp(3rem, 2.9rem + 0.9vw, 3.5rem);
-   padding: 0;
-   margin: 0;
 }
 
 .audience-growth-container > h2 > .sub-header{
    display: block;
    font-size: var(--text-size);
    padding: 0;
-   margin: 0;
 }
 
 .audience-growth-container img {
@@ -179,6 +172,7 @@ h2 {
 }
 
 .create-post-container {
+    align-items: flex-start;
     color: var(--black);
     background-color: var(--yellow-100);
     text-align: left;
@@ -199,6 +193,7 @@ h2 {
 }
 
 .ai-content-container {
+    align-items: flex-start;
     background-color: var(--yellow-500);
     color: var(--black);
     text-align: left;
@@ -211,4 +206,50 @@ h2 {
 
 .ai-content-container img {
     width: var(--medium-img-width);
+}
+
+@media (min-width: 48rem) {
+    main {
+        width: clamp(46rem, 45rem + 30vw, 80rem);
+        grid-template-areas:
+            'create-post five-star five-star schedule-posts'
+            'create-post five-star five-star schedule-posts'
+            'create-post multiple-platforms consistent-schedule schedule-posts'
+            'ai-content multiple-platforms consistent-schedule schedule-posts'
+            'ai-content audience-growth grow-followers grow-followers'
+            'ai-content audience-growth grow-followers grow-followers';
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: auto;
+    }
+
+    .five-stars-container {
+        grid-area: five-star;
+    }
+
+    .schedule-posts-container {
+        grid-area: schedule-posts;
+    }
+
+    .consistent-schedule-container {
+        grid-area: consistent-schedule;
+    }
+
+    .multiple-platforms-container {
+        grid-area: multiple-platforms;
+    }
+
+    .grow-followers-container {
+        grid-area: grow-followers;
+        flex-direction: row;
+    }
+
+    .audience-growth-container {
+        grid-area: audience-growth;
+    }
+    .create-post-container {
+        grid-area: create-post;
+    }
+    .ai-content-container {
+        grid-area: ai-content;
+    }
 }
