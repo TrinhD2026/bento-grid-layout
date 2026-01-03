@@ -27,12 +27,22 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: 'DM Sans';
+    src: url('./assets/fonts/DMSans-VariableFont_opsz,wght.ttf');
+    /*src: url('DMSans-VariableFont_opsz,wght.ttf') format('woff2-variations');
+    src: url('RobotoFlex-VF.woff2') format('woff2') tech('variations');*/
+    font-weight: 400 500;
+    font-stretch: 25% 151%;
+}
+
 body {
-    /*font-family: "Montserrat", sans-serif;*/
+    font-family: "DM Sans", sans-serif;
     font-size: var(--text-size);
     background-color: var(--gray);
     text-align: center;
     color: var(--white);
+    font-weight: 400;
 }
 
 main {
@@ -73,8 +83,17 @@ h2 {
 
 .five-stars-container h1 {
     font-size: var(--big-header-size);
+    font-weight: 500;
     line-height: 90%;
     margin-bottom: var(--medium-margin);
+}
+
+.five-stars-container h1 span:first-child {
+    color: var(--yellow-500);
+}
+
+.five-stars-container h1 span:nth-child(2) {
+    font-style: italic;
 }
 
 .five-stars-container img {
@@ -168,6 +187,11 @@ h2 {
 
 .create-post-container h2 {
     font-size: var(--medium-header-size);
+}
+
+.create-post-container h2 span:first-child{
+    font-style: italic;
+    color: var(--purple-500);
 }
 
 .create-post-container img {
